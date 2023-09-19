@@ -16,18 +16,17 @@ const App = () => {
   gap='1'
   fontWeight='bold'
 >
-  <GridItem pl='2' bg='orange.100' area={'header'}>
+  <GridItem pl='2'  area={'header'}>
   <NavBar></NavBar>
   </GridItem>
   <Show above='lg'>
-  <GridItem pl='2' bg='pink.300' area={'nav'}>
+  <GridItem pl='2'  area={'nav'}>
     Nav
   </GridItem>
   </Show>
-  <GridItem pl='2' bg='green.300' area={'main'}>
+  <GridItem pl='2'  area={'main'}>
     Main
   </GridItem>
-
 </Grid>
     
     </>
