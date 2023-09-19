@@ -1,4 +1,5 @@
 import { Grid, GridItem,Show } from '@chakra-ui/react'
+import NavBar from './assets/components/NavBar/NavBar'
 const App = () => {
   return (
     <>
@@ -9,15 +10,14 @@ const App = () => {
     lg:`"header header"
     "nav main"`
   }}
-  gridTemplateRows={'50px 1fr 30px'}
+  gridTemplateRows={'80px 1fr'}
   gridTemplateColumns={'150px 1fr'}
   h='200px'
   gap='1'
-  color='blackAlpha.700'
   fontWeight='bold'
 >
-  <GridItem pl='2' bg='orange.300' area={'header'}>
-    Header
+  <GridItem pl='2' bg='orange.100' area={'header'}>
+  <NavBar></NavBar>
   </GridItem>
   <Show above='lg'>
   <GridItem pl='2' bg='pink.300' area={'nav'}>
