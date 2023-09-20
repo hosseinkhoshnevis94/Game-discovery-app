@@ -7,7 +7,7 @@ const Score = ({ score }: ScoreProps) => {
     const color = score > 4 ? 'green' : score > 3 ? "Yellow" :'red'
   return (
     <>
-      <Badge colorScheme={color}>{score}</Badge>
+      <Badge colorScheme={color} fontSize='16px' rounded={'5px'}>{score}</Badge>
     </>
   );
 };
