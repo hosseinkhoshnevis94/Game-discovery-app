@@ -11,7 +11,8 @@ export interface Game{
     id:number,
     name:string,
     background_image:string,
-    platforms:{platform:Platform}[]
+    parent_platforms:{platform:Platform}[],
+    rating:number
   }
   interface GamesResponse{
     count:number,
