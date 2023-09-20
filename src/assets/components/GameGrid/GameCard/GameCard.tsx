@@ -3,6 +3,7 @@ import React from "react";
 import { Game } from "../../../hooks/useGames";
 import PlatformIconList from "./PlatformIconList/PlatformIconList";
 import Score from "./Score/Score";
+import useCropImage from "../../../hooks/useCropImage";
 
 interface GameProps {
   game: Game;
@@ -12,7 +13,7 @@ const GameCard = ({ game }: GameProps) => {
   return (
     <>
       <Card borderRadius={"10px"} overflow={"hidden"}>
-        <Image src={game.background_image}></Image>
+        <Image src={useCropImage(game.background_image)}></Image>
         <CardBody>
           <HStack justifyContent='space-between'>
             <Heading>{game.name}</Heading>
