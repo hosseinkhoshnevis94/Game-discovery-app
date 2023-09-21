@@ -19,14 +19,8 @@ interface GameProps {
 }
 
 const GameCard = ({ game }: GameProps) => {
-  const { isLoading } = useGames();
   return (
     <>
-      {isLoading ? (
-        <GameCardContainer>
-          <GameCardSkeleton></GameCardSkeleton>
-        </GameCardContainer>
-      ) : (
         <GameCardContainer>
           <Card>
             <CardHeader>
@@ -45,7 +39,7 @@ const GameCard = ({ game }: GameProps) => {
             </CardBody>
           </Card>
         </GameCardContainer>
-      )}
+    
     </>
   );
 };

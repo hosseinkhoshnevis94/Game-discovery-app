@@ -1,18 +1,24 @@
-import { HStack, Image, List, ListItem, Text } from "@chakra-ui/react";
-import useGenres from "../../hooks/useGenres";
+import { Button, HStack, Image, List, ListItem, Text } from "@chakra-ui/react";
+import useGenres, { Genre } from "../../hooks/useGenres";
 import GenresSkeleton from "./GenresSkeleton/GenresSkeleton";
 import useCropImage from "../../hooks/useCropImage";
+import useGames from "../../hooks/useGames";
 
-const GenreList = () => {
-  const { data: genres, isLoading,error } = useGenres();
+interface GenreListProps{
+  onSelect: (genre:Genre) => void
+}
+
+const GenreList = ({onSelect}:GenreListProps) => {
+  const { data: genres, isLoading } = useGenres();
+  const { setLoading } = useGames();
    
 
   if(isLoading) return( <GenresSkeleton></GenresSkeleton> )
-  if(error!=='canceled') return( 
-    <HStack paddingTop={'50vh'} height={'100%'} align={'flex-start'} justifyContent={'center'}>
-  <Text>Try again!</Text> 
-    </HStack>
-  )
+  // if(error!=='canceled') return( 
+  //   <HStack paddingTop={'50vh'} height={'100%'} align={'flex-start'} justifyContent={'center'}>
+  // <Text>Try again!</Text> 
+  //   </HStack>
+  // )
   return  (
     <List>
       {genres.map((genre) => (
@@ -23,7 +29,7 @@ const GenreList = () => {
               borderRadius={"6px"}
               src={useCropImage(genre.image_background)}
             ></Image>
-            <Text> {genre.name}</Text>
+            <Button onClick={()=>{setLoading(true);onSelect(genre)}} variant='link'> {genre.name}</Button>
           </HStack>
         </ListItem>
       ))
