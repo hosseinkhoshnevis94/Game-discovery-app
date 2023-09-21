@@ -29,7 +29,7 @@ const App = () => {
   </GridItem>
   <Show above='lg'>
   <GridItem pl='2'  area={'nav'}>
-    <GenreList onSelect={(g)=> setSelectedGenre(g)
+    <GenreList selectedGenre={selectedGenre} onSelect={(g)=> setSelectedGenre(g)
     }></GenreList>
   </GridItem>
   </Show>

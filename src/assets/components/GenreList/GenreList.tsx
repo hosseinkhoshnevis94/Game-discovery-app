@@ -5,12 +5,13 @@ import useCropImage from "../../hooks/useCropImage";
 import useGames from "../../hooks/useGames";
 
 interface GenreListProps{
-  onSelect: (genre:Genre) => void
+  onSelect: (genre:Genre) => void,
+  selectedGenre:Genre | null
 }
 
-const GenreList = ({onSelect}:GenreListProps) => {
+const GenreList = ({onSelect,selectedGenre}:GenreListProps) => {
   const { data: genres, isLoading } = useGenres();
-  const { setLoading } = useGames();
+
    
 
   if(isLoading) return( <GenresSkeleton></GenresSkeleton> )
@@ -29,7 +30,7 @@ const GenreList = ({onSelect}:GenreListProps) => {
               borderRadius={"6px"}
               src={useCropImage(genre.image_background)}
             ></Image>
-            <Button onClick={()=>{setLoading(true);onSelect(genre)}} variant='link'> {genre.name}</Button>
+            <Button color={genre.id==selectedGenre?.id ? 'red' : 'white'} onClick={()=>{onSelect(genre)}} variant='link'> {genre.name}</Button>
           </HStack>
         </ListItem>
       ))

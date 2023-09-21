@@ -14,6 +14,7 @@ const useData =  <T>(endpoint:string,requestConfig?: AxiosRequestConfig,deps?:an
     const[isLoading,setLoading] = useState(true)
 
     useEffect(()=>{
+        setLoading(true)
         const controller = new AbortController()
         apiClient.get<FetchResponse<T>>(endpoint, {signal:controller.signal,...requestConfig})
         .then(res =>  setDate(res.data.results))
