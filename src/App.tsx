@@ -13,7 +13,7 @@ const App = () => {
     "nav main"`
   }}
   gridTemplateRows={'80px 1fr'}
-  gridTemplateColumns={'150px 1fr'}
+  gridTemplateColumns={'1fr 5fr'}
   h='200px'
   gap='1'
   fontWeight='bold'
