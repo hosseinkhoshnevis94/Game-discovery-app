@@ -19,7 +19,6 @@ interface PlatformIconListProps {
 }
 
 const PlatformIconList = ({ platforms }: PlatformIconListProps) => {
-  console.log(platforms);
 
   const icons:{[key:string]:IconType} = {
     pc: FaWindows,
@@ -36,7 +35,7 @@ const PlatformIconList = ({ platforms }: PlatformIconListProps) => {
   return (
     <HStack display={'flex'} alignItems={'center'} justifyContent={'flex-start'}>
       {platforms.map((p) => (
-        <Icon as={icons[p.slug]} color={'red.400'}></Icon>
+        <Icon key={p.id} as={icons[p.slug]} color={'red.400'}></Icon>
       ))}
     </HStack>
   );
