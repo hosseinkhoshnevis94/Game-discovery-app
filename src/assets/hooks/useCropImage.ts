@@ -1,5 +1,5 @@
 
-import noImage from '../../../public/images/no-image.jpg'
+import noImage from '/images/no-image.jpg'
 
 const useCropImage = (url:string) =>{
     if(url==null) return noImage
