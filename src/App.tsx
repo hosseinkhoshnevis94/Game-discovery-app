@@ -7,11 +7,14 @@ import { useState } from "react";
 import PlatformSelector from "./assets/components/PlatformSelector/PlatformSelector";
 import { Platform } from "./assets/hooks/useGames";
 
+export interface GameQuery {
+  selectedGenre:Genre|null,
+  selectedPlatform:Platform|null,
+
+}
+
 const App = () => {
-  const [selectedGenre, setSelectedGenre] = useState<Genre | null>(null);
-  const [selectedPlatform, setSelectedPlatform] = useState<Platform | null>(
-    null
-  );
+  const [gameQuery,setGamequery]=useState<GameQuery>({} as GameQuery)
 
   return (
     <>
@@ -34,8 +37,8 @@ const App = () => {
         <Show above="lg">
           <GridItem pl="2" area={"nav"}>
             <GenreList
-              selectedGenre={selectedGenre}
-              onSelect={(genre) => setSelectedGenre(genre)}
+              selectedGenre={gameQuery.selectedGenre}
+              onSelect={(selectedGenre) =>setGamequery({...gameQuery,selectedGenre})}
             ></GenreList>
           </GridItem>
         </Show>
@@ -46,11 +49,13 @@ const App = () => {
             marginBottom={"15px"}
           >
             <PlatformSelector
-              onSelect={(platform) => setSelectedPlatform(platform)}
-              selectedPlatform={selectedPlatform}
+              onSelect={(selectedPlatform) => setGamequery({...gameQuery,selectedPlatform})}
+              selectedPlatform={gameQuery.selectedPlatform}
             ></PlatformSelector>
           </HStack>
-          <GameGrid selectedGenre={selectedGenre} selectedPlatform={selectedPlatform}></GameGrid>
+          <GameGrid
+            gameQuery={gameQuery}
+          ></GameGrid>
         </GridItem>
       </Grid>
     </>
