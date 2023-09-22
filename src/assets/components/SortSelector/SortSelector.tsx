@@ -9,10 +9,23 @@ import {
 import {BsChevronDown, BsChevronUp} from 'react-icons/bs'
 import { useState} from 'react'
 
+interface SoreSelectorProps{
+    onSelect: (selectedSort:string|null) => void,
+    selectedSort:string | null
+}
 
-
-const SortSelector = ({ onSelect }:any) => {
+const SortSelector = ({ onSelect,selectedSort }:SoreSelectorProps) => {
     const [isOpen,setIsOpen] = useState(false)
+    const sortOrder =[
+        {value:"",label:"Relevance"},
+        {value:"-added",label:"Date added"},
+        {value:"name",label:"Name"},
+        {value:"-released",label:"Release date"},
+        {value:"-metacritic",label:"Popularity"},
+        {value:"-rating",label:"Average rating"},
+    ]
+
+    const selectedSortName = sortOrder.find(item => item.value==selectedSort)
   return (
     <Menu>
       <MenuButton
@@ -21,13 +34,12 @@ const SortSelector = ({ onSelect }:any) => {
         isActive={isOpen}
         rightIcon={isOpen == true ? <BsChevronUp /> : <BsChevronDown />}
       >
-"sort"
+       Sort By: {selectedSort===''||selectedSort==null ? 'Relevance' : selectedSortName?.label}
       </MenuButton>
       <MenuList>
-        <MenuItem onClick={() => onSelect(null)}>All</MenuItem>
-        <MenuItem>"item"</MenuItem>
-        <MenuItem>"item"</MenuItem>
-        <MenuItem>"item"</MenuItem>
+       {sortOrder.map( item => 
+         <MenuItem value={item.value} key={item.value} onClick={()=>onSelect(item.value)}>{item.label}</MenuItem>
+         )}
       </MenuList>
     </Menu>
   );
