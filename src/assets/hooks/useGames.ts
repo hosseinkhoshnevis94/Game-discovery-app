@@ -11,7 +11,8 @@ export interface Game{
     name:string,
     background_image:string,
     parent_platforms:{platform:Platform}[],
-    rating:number
+    rating:number,
+    rating_top:3|4|5
   }
 
 const useGames = (gameQuery:GameQuery) =>
