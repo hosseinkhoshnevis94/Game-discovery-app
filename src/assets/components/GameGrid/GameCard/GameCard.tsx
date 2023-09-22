@@ -29,10 +29,10 @@ const GameCard = ({ game }: GameProps) => {
             </CardHeader>
             <CardBody>
               <HStack justifyContent="space-between">
-                <Heading fontSize={"22px"}>{game.name}</Heading>
+                <Heading fontWeight={'500'} fontSize={"22px"}>{game.name}</Heading>
                 <Score score={game.rating}></Score>
               </HStack>
-              <HStack justifyContent={'space-between'}>
+              <HStack paddingY={'12px'} justifyContent={'space-between'}>
               <PlatformIconList
                 platforms={game.parent_platforms.map(
                   ({ platform }) => platform

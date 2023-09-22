@@ -29,7 +29,7 @@ const App = () => {
           lg: `"header header"
     "nav main"`,
         }}
-        gridTemplateRows={"80px 1fr"}
+        gridTemplateRows={"160px 1fr"}
         gridTemplateColumns={"1fr 5fr"}
         h="200px"
         gap="1"
@@ -39,27 +39,30 @@ const App = () => {
           <NavBar onSearch={(searchInput)=>setGamequery({...gameQuery,searchInput})}></NavBar>
         </GridItem>
         <Show above="lg">
-          <GridItem pl="2" area={"nav"}>
+          <GridItem paddingTop={'50px'} pl="2" area={"nav"}>
             <GenreList
               selectedGenre={gameQuery.selectedGenre}
               onSelect={(selectedGenre) =>setGamequery({...gameQuery,selectedGenre})}
             ></GenreList>
           </GridItem>
         </Show>
-        <GridItem pl="2" area={"main"}>
-          <HStack>
-            <GameHeading header={gameQuery}></GameHeading>
-          </HStack>
+        <GridItem pl="2" paddingX={'15px'} paddingTop={'50px'} area={"main"}>
           <HStack
-            padding={"25px 0px"}
-            borderBottom={"1px solid #efefef"}
+            paddingBottom={"25px"}
+            borderBottom={"1px solid #c9c6c6"}
             marginBottom={"15px"}
+            display={'flex'}
+            align={'center'}
+            justifyContent={'space-between'}
           >
+            <GameHeading header={gameQuery}></GameHeading>
+            <HStack paddingLeft={'30px'} paddingTop={'5px'}>
             <PlatformSelector
               onSelect={(selectedPlatform) => setGamequery({...gameQuery,selectedPlatform})}
               selectedPlatform={gameQuery.selectedPlatform}
-            ></PlatformSelector>
+              ></PlatformSelector>
             <SortSelector selectedSort={gameQuery.selectedSort} onSelect={(selectedSort) => setGamequery({...gameQuery, selectedSort})}></SortSelector>
+              </HStack>
           </HStack>
           <GameGrid
             gameQuery={gameQuery}

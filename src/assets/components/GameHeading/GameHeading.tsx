@@ -11,7 +11,7 @@ const GameHeading = ({ header }: p) => {
   } games`;
   const filters = Object.keys(header).length;
 
-  return <Heading marginTop={'15px'}>{filters !== 0 && heading}</Heading>;
+  return <Heading display={{base:'none',md:'inline-block'}} fontSize={'24px'} fontWeight={'400'} >{filters !== 0 && heading}</Heading>;
 };
 
 export default GameHeading;

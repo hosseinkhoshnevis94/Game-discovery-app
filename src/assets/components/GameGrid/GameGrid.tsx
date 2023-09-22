@@ -20,6 +20,7 @@ const GameGrid = ({gameQuery}:GameGridProps) => {
         columns={{ sm: 1, md: 2, lg: 4 }}
         spacingX="20px"
         spacingY="20px"
+        paddingTop={'30px'}
         >
         {isLoading && skeletonNumber.map( skeleton => <GameCardSkeleton></GameCardSkeleton>)}
         {games.map((game) => (

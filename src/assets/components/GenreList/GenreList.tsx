@@ -2,7 +2,6 @@ import { Button, HStack, Heading, Image, List, ListItem, Text } from "@chakra-ui
 import useGenres, { Genre } from "../../hooks/useGenres";
 import GenresSkeleton from "./GenresSkeleton/GenresSkeleton";
 import useCropImage from "../../hooks/useCropImage";
-import useGames from "../../hooks/useGames";
 
 interface GenreListProps{
   onSelect: (genre:Genre) => void,
@@ -15,24 +14,22 @@ const GenreList = ({onSelect,selectedGenre}:GenreListProps) => {
    
 
   if(isLoading) return( <GenresSkeleton></GenresSkeleton> )
-  // if(error!=='canceled') return( 
-  //   <HStack paddingTop={'50vh'} height={'100%'} align={'flex-start'} justifyContent={'center'}>
-  // <Text>Try again!</Text> 
-  //   </HStack>
-  // )
   return  (
     <>
-    <Heading  padding={"20px 5px"} fontSize={'18px'}>Genres</Heading>
-    <List>
+    <Heading  paddingLeft={'30px'} paddingBottom={'20px'} fontSize={'26px'} fontWeight={'500'}>Genres</Heading>
+    <List paddingLeft={'20px'}>
       {genres.map((genre) => (
-        <ListItem key={genre.id} paddingLeft={"5px"}>
-          <HStack paddingY={"15px"}>
+        <ListItem key={genre.id} paddingLeft={"5px"} >
+          <HStack paddingY={"15px"}width={'100%'} >
+            <Button display={'flex'} justifyContent={'flex-start'} width={'100%'} padding={'5px'} border={genre.id==selectedGenre?.id ? '1px solid #49ff18' : '0px'}  onClick={()=>{onSelect(genre)}} variant='link'>
             <Image
               boxSize="50px"
               borderRadius={"6px"}
               src={useCropImage(genre.image_background)}
             ></Image>
-            <Button color={genre.id==selectedGenre?.id ? 'red' : 'white'} onClick={()=>{onSelect(genre)}} variant='link'> {genre.name}</Button>
+            <Text paddingLeft={'15px'}>{genre.name}</Text>
+               
+               </Button>
           </HStack>
         </ListItem>
       ))

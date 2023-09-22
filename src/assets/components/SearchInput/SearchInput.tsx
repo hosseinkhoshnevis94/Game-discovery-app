@@ -1,4 +1,5 @@
 import {
+  Button,
   Input,
   InputGroup,
   InputLeftElement,
@@ -15,7 +16,7 @@ interface SearchinputProps{
 export const SearchInput = ({onSearch}:SearchinputProps) => {
   const searchInputRef = useRef<HTMLInputElement>(null);
   return (
-    <Stack spacing={4} width={"40%"}>
+    <Stack spacing={4} >
       <form
         onSubmit={(e) => {
           e.preventDefault();
@@ -25,9 +26,9 @@ export const SearchInput = ({onSearch}:SearchinputProps) => {
         }}
       >
         <InputGroup>
-          <Input ref={searchInputRef}  placeholder="Search Somthing..." />
-          <InputRightElement>
-            <FiSearch></FiSearch>
+          <Input size={{base:'sm',md:'lg'}}  ref={searchInputRef}  placeholder="Search Somthing..." />
+          <InputRightElement >
+            <FiSearch ></FiSearch>
           </InputRightElement>
         </InputGroup>
       </form>

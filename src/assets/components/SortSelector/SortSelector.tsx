@@ -27,7 +27,7 @@ const SortSelector = ({ onSelect,selectedSort }:SoreSelectorProps) => {
 
     const selectedSortName = sortOrder.find(item => item.value==selectedSort)
   return (
-    <Menu>
+    <Menu >
       <MenuButton
         as={Button}
         onClick={() => setIsOpen(!isOpen)}
@@ -36,9 +36,9 @@ const SortSelector = ({ onSelect,selectedSort }:SoreSelectorProps) => {
       >
        Sort By: {selectedSort===''||selectedSort==null ? 'Relevance' : selectedSortName?.label}
       </MenuButton>
-      <MenuList>
+      <MenuList >
        {sortOrder.map( item => 
-         <MenuItem value={item.value} key={item.value} onClick={()=>onSelect(item.value)}>{item.label}</MenuItem>
+         <MenuItem  value={item.value} key={item.value} onClick={()=>onSelect(item.value)}>{item.label}</MenuItem>
          )}
       </MenuList>
     </Menu>

@@ -5,7 +5,7 @@ const ColorModeSwitch = () => {
 
   return (
     <HStack>
-      <Switch size={'lg'}  isChecked={colorMode=='dark'} onChange={toggleColorMode}></Switch> 
+      <Switch size={{base:'sm',md:'lg'}}  isChecked={colorMode=='dark'} onChange={toggleColorMode}></Switch> 
       <Text>{colorMode=='dark' ? 'Light' : "Dark"}</Text>
     </HStack>
   );
