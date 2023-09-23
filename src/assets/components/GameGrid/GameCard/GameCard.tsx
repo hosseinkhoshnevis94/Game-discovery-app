@@ -5,6 +5,7 @@ import {
   HStack,
   Heading,
   Image,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import React from "react";
 import useGames, { Game } from "../../../hooks/useGames";
@@ -20,14 +21,15 @@ interface GameProps {
 }
 
 const GameCard = ({ game }: GameProps) => {
+
   return (
     <>
         <GameCardContainer>
-          <Card>
+          <Card boxShadow={'md'}  >
             <CardHeader padding={0}>
               <Image objectFit={'cover'} width={'100%'} src={useCropImage(game.background_image)}></Image>
             </CardHeader>
-            <CardBody>
+            <CardBody  >
               <HStack justifyContent="space-between">
                 <Heading fontWeight={'500'} fontSize={"22px"}>{game.name}</Heading>
                 <Score score={game.rating}></Score>
