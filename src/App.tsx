@@ -46,7 +46,7 @@ const App = () => {
             ></GenreList>
           </GridItem>
         </Show>
-        <GridItem pl="2" paddingX={'15px'} paddingTop={'50px'} area={"main"}>
+        <GridItem pl="2" paddingX={'15px'} paddingY={'50px'} paddingBottom={'150px'} area={"main"}>
           <HStack
             paddingBottom={"25px"}
             borderBottom={"1px solid #c9c6c6"}
