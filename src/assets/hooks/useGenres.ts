@@ -13,7 +13,6 @@ const useGenres = () => useQuery({
   queryFn: () => apiClient.get<FetchResponse<Genre>>('genres')
   .then(res => res.data
   ),
-  staleTime:10000,
-  cacheTime:100000
+  staleTime:24*60*60*1000
 })
 export default useGenres
