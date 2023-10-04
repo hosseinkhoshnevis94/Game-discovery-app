@@ -4,17 +4,14 @@ import {
   CardHeader,
   HStack,
   Heading,
-  Image,
-  useColorModeValue,
+  Image
 } from "@chakra-ui/react";
-import React from "react";
-import useGames, { Game } from "../../../hooks/useGames";
-import PlatformIconList from "./PlatformIconList/PlatformIconList";
-import Score from "./Score/Score";
 import useCropImage from "../../../hooks/useCropImage";
-import GameCardSkeleton from "../GameCardSkeleton/GameCardSkeleton";
+import { Game } from "../../../hooks/useGames";
 import GameCardContainer from "../GameCardContainer/GameCardContainer";
 import Emoji from "./Emoji/Emoji";
+import PlatformIconList from "./PlatformIconList/PlatformIconList";
+import Score from "./Score/Score";
 
 interface GameProps {
   game: Game;

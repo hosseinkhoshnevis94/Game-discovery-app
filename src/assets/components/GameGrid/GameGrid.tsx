@@ -1,14 +1,11 @@
 import React from "react";
 import { Box, Button, SimpleGrid, Text } from "@chakra-ui/react";
-import { GameQuery } from "../../../App";
 import useGames from "../../hooks/useGames";
 import GameCard from "./GameCard/GameCard";
 import GameCardSkeleton from "./GameCardSkeleton/GameCardSkeleton";
 
-interface GameGridProps {
-  gameQuery: GameQuery;
-}
-const GameGrid = ({ gameQuery }: GameGridProps) => {
+
+const GameGrid = () => {
   const {
     error,
     data,
@@ -16,7 +13,7 @@ const GameGrid = ({ gameQuery }: GameGridProps) => {
     isFetchingNextPage,
     hasNextPage,
     fetchNextPage,
-  } = useGames(gameQuery);
+  } = useGames();
   const skeletonNumber = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
   return (

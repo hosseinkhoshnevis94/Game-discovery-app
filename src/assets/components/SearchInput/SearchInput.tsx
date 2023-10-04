@@ -8,20 +8,19 @@ import {
 } from "@chakra-ui/react";
 import { FiSearch } from "react-icons/fi";
 import { useRef } from "react";
+import useGameStore from "../../../store";
 
-interface SearchinputProps{
-    onSearch: (searchInput:string | null) => void
-}
 
-export const SearchInput = ({onSearch}:SearchinputProps) => {
+export const SearchInput = () => {
   const searchInputRef = useRef<HTMLInputElement>(null);
+  const setSearch = useGameStore(s=>s.setSearch)
   return (
     <Stack spacing={4} >
       <form
         onSubmit={(e) => {
           e.preventDefault();
           if (searchInputRef.current) {
-            onSearch(searchInputRef?.current.value)
+            setSearch(searchInputRef?.current.value)
           }
         }}
       >
