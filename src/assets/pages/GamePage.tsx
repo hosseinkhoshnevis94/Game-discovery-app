@@ -5,6 +5,7 @@ import ExpandableText from "../components/ExpandableText/ExpandableText";
 import GameDiscription from "../components/GameDiscription/GameDiscription";
 import GameTrailer from "../components/GameTrailer/GameTrailer";
 import GameScreenShot from "../components/GameScreenShot/GameScreenShot";
+import BackToTop from "../components/BackToTop/BackToTop";
 
 const GamePage = () => {
   const { slug } = useParams();
@@ -22,6 +23,7 @@ const GamePage = () => {
       <GameDiscription game={game}></GameDiscription>
       <ExpandableText>{game?.description_raw}</ExpandableText>
       <GameScreenShot gameId={game?.id}></GameScreenShot>
+      <BackToTop></BackToTop>
     </SimpleGrid>
   );
 };
