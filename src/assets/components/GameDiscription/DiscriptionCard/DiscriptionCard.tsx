@@ -8,8 +8,8 @@ interface Props{
 
 const DiscriptionCard = ({heading,children}:Props) => {
   return (
-    <Box>
-    <Text marginBottom={'15px'} color={'cyan.500'} as={'dt'} fontSize={'24px'} >{heading}</Text>
+    <Box padding={'10px 30px'}>
+    <Text borderBottom={"1px solid "} borderColor={'cyan.700'} marginBottom={'15px'} color={'cyan.500'} as={'dt'} fontSize={'24px'} >{heading}</Text>
     <dd>
     {children}
     </dd>
