@@ -24,13 +24,13 @@ const GameCard = ({ game }: GameProps) => {
         <GameCardContainer>
           <Card boxShadow={'md'}  >
             <CardHeader padding={0}>
+                <Link to={`/games/${game.slug}`}>
               <Image objectFit={'cover'} width={'100%'} src={useCropImage(game.background_image)}></Image>
+                </Link>
             </CardHeader>
             <CardBody  >
               <HStack justifyContent="space-between">
-                <Link to={`/games/${game.slug}`}>
                 <Heading fontWeight={'500'} fontSize={"22px"}>{game.name}</Heading>
-                </Link>
                 <Score score={game.rating}></Score>
               </HStack>
               <HStack paddingY={'12px'} justifyContent={'space-between'}>

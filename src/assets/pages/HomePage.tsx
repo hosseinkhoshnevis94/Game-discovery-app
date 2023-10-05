@@ -13,8 +13,8 @@ const HomePage = () => {
           base: `"main"`,
           lg: `"nav main"`,
         }}
-        gridTemplateRows={"160px 1fr"}
-        gridTemplateColumns={{base:"1fr",lg:"240px 1fr"}}
+        gridTemplateRows={"200px 1fr"}
+        gridTemplateColumns={{base:"1fr",lg:"1fr 5fr"}}
         h="200px"
         gap="1"
         fontWeight="bold"
