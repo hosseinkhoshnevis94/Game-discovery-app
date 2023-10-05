@@ -7,7 +7,7 @@ interface screenShot{
     width:number,
     height:number
 }
-const useScreenShot = (gameId:number) => {
+const useScreenShot = (gameId?:number) => {
 const apiClient = new ApiClient<screenShot>(`/games/${gameId}/screenshots`)
 return useQuery({
     queryKey:['screenShot',gameId],

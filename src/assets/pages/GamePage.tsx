@@ -13,9 +13,9 @@ const GamePage = () => {
   // if(error || !game) throw error
 
   return (
-    <SimpleGrid columnGap={'80px'} rowGap={'150px'} columns={2}  padding={'100px 60px'}>
+    <SimpleGrid columnGap={'80px'} rowGap={{base:'20px',md:'150px'}} columns={{base:1,md:2}}  padding={{base:'10px',md:'100px 60px'}}>
       <Box>
-      <Heading as={'h2'} fontSize={'40px'}  fontWeight={'600'}  paddingY={'40px'}>{game?.name}</Heading>
+      <Heading as={'h2'} fontSize={'40px'}  fontWeight={'600'}  paddingY={{base:'5px',md:"40px"}}>{game?.name}</Heading>
       <GameTrailer gameId={game?.id} ></GameTrailer>
       </Box>
       <GameDiscription game={game}></GameDiscription>

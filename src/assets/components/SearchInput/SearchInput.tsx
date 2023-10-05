@@ -9,10 +9,12 @@ import {
 import { FiSearch } from "react-icons/fi";
 import { useRef } from "react";
 import useGameStore from "../../../store";
+import { useNavigate } from "react-router-dom";
 
 
 export const SearchInput = () => {
   const searchInputRef = useRef<HTMLInputElement>(null);
+  const navigate = useNavigate()
   const setSearch = useGameStore(s=>s.setSearch)
   return (
     <Stack spacing={4} >
@@ -20,7 +22,9 @@ export const SearchInput = () => {
         onSubmit={(e) => {
           e.preventDefault();
           if (searchInputRef.current) {
-            setSearch(searchInputRef?.current.value)
+            setSearch(searchInputRef?.current.value);
+            navigate('/')
+
           }
         }}
       >

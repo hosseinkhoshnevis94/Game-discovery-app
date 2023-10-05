@@ -10,7 +10,7 @@ interface Props {
 
 const GameDiscription = ({ game }: Props) => {
   return (
-    <SimpleGrid rowGap={'28px'} columnGap={'30px'} columns={2} s paddingTop={'125px'}>
+    <SimpleGrid rowGap={{base:'5px',md:'30px'}} columnGap={{base:'5px',md:'30px'}} columns={2}  paddingTop={'125px'}>
       <DiscriptionCard heading="Platforms">
         {game?.parent_platforms.map((p) => (
           <Text>{p.platform.name}</Text>

@@ -3,7 +3,7 @@ import useScreenShot from "../../hooks/useScreenShot";
 import { Image, SimpleGrid } from "@chakra-ui/react";
 
 interface Props {
-  gameId: number;
+  gameId?: number;
 }
 
 const GameScreenShot = ({ gameId }: Props) => {
