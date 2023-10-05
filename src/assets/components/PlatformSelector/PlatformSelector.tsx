@@ -19,7 +19,6 @@ const PlatformSelector = () => {
   const setSelectedPlatformId = useGameStore((s) => s.setPlatformId);
   const selectedPlatform = usePlatform(platformId);
 
-  // const selectedPlatform = usePlatform(platformId)
 
   return (
     <Menu>

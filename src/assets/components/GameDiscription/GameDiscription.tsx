@@ -1,7 +1,6 @@
-import React from "react";
 import DiscriptionCard from "./DiscriptionCard/DiscriptionCard";
 import { Game } from "../../hooks/useGames";
-import { Box, SimpleGrid, Text } from "@chakra-ui/react";
+import {  SimpleGrid, Text } from "@chakra-ui/react";
 import Score from "../Score/Score";
 
 interface Props {
