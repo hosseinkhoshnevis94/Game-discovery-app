@@ -1,4 +1,3 @@
-import React from "react";
 import useTrailer from "../../hooks/useTrailer";
 import { AspectRatio, Box, Text } from "@chakra-ui/react";
 
