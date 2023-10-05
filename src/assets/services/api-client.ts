@@ -22,7 +22,10 @@ class ApiClient <T>{
     get = (config:AxiosRequestConfig) => {
         return axiosInstance.get<FetchResponse<T>>(this.eindpoint,config)
         .then(res => res.data)
-
+    }
+    getGame = (id:number| string) =>{
+        return axiosInstance.get<T>(`${this.eindpoint}/${id}`)
+        .then(res=> res.data)
     }
 
 }

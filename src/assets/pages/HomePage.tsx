@@ -2,7 +2,6 @@ import { Grid, GridItem, Show, HStack } from '@chakra-ui/react'
 import GameGrid from '../components/GameGrid/GameGrid'
 import GameHeading from '../components/GameHeading/GameHeading'
 import GenreList from '../components/GenreList/GenreList'
-import NavBar from '../components/NavBar/NavBar'
 import PlatformSelector from '../components/PlatformSelector/PlatformSelector'
 import SortSelector from '../components/SortSelector/SortSelector'
 
@@ -20,9 +19,6 @@ const HomePage = () => {
         gap="1"
         fontWeight="bold"
       >
-        {/* <GridItem pl="2" area={"header"}>
-          <NavBar></NavBar>
-        </GridItem> */}
         <Show above="lg">
           <GridItem paddingTop={"50px"} pl="2" area={"nav"}>
             <GenreList></GenreList>
