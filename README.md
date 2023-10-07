@@ -2,7 +2,8 @@ Creating a Git repository for your game project with Vite, React Router DOM, Cha
 
 ---
 
-**Repository Name**: Game Discovery App
+                                                                               **Game Discovery App**
+                                                                               <span style="font-size: larger;">This text has a larger font size.</span>
 
 **Description**:
 
