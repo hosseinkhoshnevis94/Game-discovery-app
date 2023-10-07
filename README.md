@@ -27,7 +27,7 @@ Welcome to the Game Project repository! This project is a web application built 
 To get started with this project, follow these steps:
 
 1. Clone the repository:
-    git clone https://github.com/your-username/game-project.git
+    git clone https://github.com/hosseinkhoshnevis94/Game-discovery-app.git
 3. Install project dependencies by running:
     npm install
 5. Start the development server:
