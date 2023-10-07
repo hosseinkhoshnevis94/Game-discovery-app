@@ -20,6 +20,7 @@ Welcome to the Game Project repository! This project is a web application built 
 - **Game Detail Page**: Users can click on individual games to navigate to a dedicated game detail page with more information.
 - **State Management**: Zustand is utilized for predictable and efficient application state management.
 - **Data Fetching**: React Query is used for efficient data fetching and caching.
+- **Infinite Scrolling**: Implementing infinite scrolling for effortless exploration of game listings.
 - **Responsive Design**: Chakra UI ensures a modern and responsive user interface.
 
 ## Getting Started
