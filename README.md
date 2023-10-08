@@ -2,6 +2,11 @@
 
 Welcome to the Game Project repository! This project is a web application built using Vite, React Router DOM, Chakra UI, Zustand, and React Query. It provides a platform for users to explore and discover games with ease.
 
+
+## Demo
+
+You can see a live demo of the project at https://game-discovery-app-sepia.vercel.app
+
 ## Tech Stack
 
 - **Vite**: A fast build tool and development server for modern web development.
