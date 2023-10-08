@@ -9,9 +9,9 @@ You can see a live demo of the project at https://game-discovery-app-sepia.verce
 
 ## Tech Stack
 
-- [Vite](https://vitejs.dev/)**Vite**: A fast build tool and development server for modern web development.
-- [React](https://react.dev/)**React**: A JavaScript library for building user interfaces.
-- [React Router DOM](https://reactrouter.com/)**React Router DOM**: Provides client-side routing for single-page applications.
+- [Vite](https://vitejs.dev/): A fast build tool and development server for modern web development.
+- [React](https://react.dev/): A JavaScript library for building user interfaces.
+- [React Router DOM](https://reactrouter.com/): Provides client-side routing for single-page applications.
 - [Chakra UI](https://chakra-ui.com/): A modular and accessible component library for building user interfaces.
 - [Zustand](https://zustand-demo.pmnd.rs/): A simple and fast state management library for React.
 - [React Query](https://tanstack.com/): A data-fetching and caching library for React applications.
