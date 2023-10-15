@@ -33,7 +33,7 @@ const GenreList = () => {
       <List paddingLeft={"20px"}>
         {genres?.results.map((genre) => (
           <ListItem key={genre.id} paddingLeft={"5px"}>
-            <HStack paddingY={"15px"} width={"100%"}>
+            <HStack  width={"100%"}>
               <Button
                 display={"flex"}
                 justifyContent={"flex-start"}
