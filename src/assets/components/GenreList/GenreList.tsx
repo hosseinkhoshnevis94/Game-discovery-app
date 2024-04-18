@@ -40,7 +40,7 @@ const GenreList = () => {
                 width={"100%"}
                 padding={"5px"}
                 color={
-                  genre.id == selectedGenreId && "#25DCDF" 
+                  genre.id == selectedGenreId ? "#25DCDF" : ""
                 }
                 onClick={() => {
                   setSelectedGenreId(genre.id);
