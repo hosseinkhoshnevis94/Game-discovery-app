@@ -39,8 +39,17 @@ const GenreList = () => {
                 justifyContent={"flex-start"}
                 width={"100%"}
                 padding={"5px"}
-                border={
-                  genre.id == selectedGenreId ? "1px solid #49ff18" : "0px"
+                background={
+                  genre.id == selectedGenreId && "#25DCDF" 
+                }
+                background={
+                  genre.id == selectedGenreId && "linear-gradient(to right, #25DCDF 12%, #B736C3 100%)" 
+                }
+                webkit-background-clip={
+                  genre.id == selectedGenreId && "text"
+                }
+                webkit-text-fill-color={
+                  genre.id == selectedGenreId && "transparent"
                 }
                 onClick={() => {
                   setSelectedGenreId(genre.id);
